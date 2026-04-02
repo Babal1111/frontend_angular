@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table</title>
+</head>
+<body>
+    <table border="1" width="50%" rules="all" cellpadding="10" cellspacing="5">
+        <caption>student details</caption>
+        <colgroup>
+            <col style="background-color: rgb(130, 47, 14);">
+            <col style="background-color: orange;">+
+        </colgroup>
+        <thead bgcolor="lightblue">
+            <tr>
+            <th>sno</th>
+            <th>name</th>
+            <th>id</th>
+        </tr>
+        </thead>
+        <tbody bgcolor="lightyellow">
+            <tr>
+            <td>1</td>
+            <td>ab</td>
+            <td>e001</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>cd</td>
+            <td>e002</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td colspan="2" rowspan="2" align="center">not exist</td>
+        </tr>
+        <tr>
+            <td>4</td>
+        </tr>
+        </tbody>
+        <tfoot bgcolor="lightgreen" align="center">
+            <tr >
+                <td colspan="3">footer: sumamary</td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+</html>
