@@ -1,0 +1,15 @@
+
+#div1 #para1{
+    color: aquamarine;
+    background-color: yellow;
+} 
+
+#granparet #parent #child{
+    color: bisque;
+    background-color: blue  ;
+}
+
+#granparet > #parent > #child{
+    color: bisque;
+    background-color: blue  ;
+}

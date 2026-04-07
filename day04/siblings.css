@@ -1,0 +1,4 @@
+
+#parent > #sibling1 ~ #sibling2{
+    background-color: red;
+}

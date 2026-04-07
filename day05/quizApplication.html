@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>quiz application</title>
+</head>
+<style>
+    #header{
+        width: 100%;
+        height: 65px;
+        text-align: center;
+        background-color:aqua ;
+        color: yellow;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    #main{
+        margin: 20px;
+        width: 100%;
+        height: 500px;
+    }
+    #footer{
+        width: 100%;
+        height: 45px;
+        text-align: center;
+        background-color: antiquewhite;
+        color: rgb(44, 48, 35);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    label{
+        margin-left: 5px;
+    }
+    input{
+        margin-left:10px;
+    }
+    .correct{
+        background-color: green;
+        color: black;
+        display: inline;
+        display: none;
+        color: azure;
+    }
+    .incorrect{
+        background-color: red;
+        display: inline;
+        display: none;
+        color: white;
+    }
+
+    /* Question 1 */
+    #op1:checked~#correct1{
+        display: inline;
+    }
+    #op2:checked~#incorrect1,
+    #op3:checked~#incorrect1,
+    #op4:checked~#incorrect1{
+        display: inline;
+    }
+
+    
+    #q2opt2:checked~#correct2{
+        display: inline;
+    }
+    #q2opt1:checked~#incorrect2,
+    #q2opt3:checked~#incorrect2,
+    #q2opt4:checked~#incorrect2{
+        display: inline;
+    }
+    #q3opt1:checked~#correct3{
+        display: inline;
+    }
+    #q3opt2:checked~#incorrect3,
+    #q3opt3:checked~#incorrect3,
+    #q3opt4:checked~#incorrect3{
+        display: inline;
+    }
+</style>
+<body>
+   <header id="header">
+    Quiz app
+   </header>
+   <main id="main">
+    <section>
+        <h4>Who is Prime minister of India?</h4>
+        <input type="radio" name="question1" id="op1"><label for="op1">a) Keju ji</label>
+        <input type="radio" name="question1" id="op2"><label for="op2">b) Namo</label>
+        <input type="radio" name="question1" id="op3"><label for="op3">c) RG</label>
+        <input type="radio" name="question1" id="op4"><label for="op4">d) Lallu</label>
+        <p id="correct1" class="correct">Correct!</p>
+        <p id="incorrect1" class="incorrect">Incorrect!</p>
+        <br>
+
+        <h4>Why do you ask so many questions?</h4>
+        <input type="radio" name="question2" id="q2opt1"><label for="q2opt1">a) I can</label>
+        <input type="radio" name="question2" id="q2opt2"><label for="q2opt2">b) Improve performance</label>
+        <input type="radio" name="question2" id="q2opt3"><label for="q2opt3">c) Reduce performance</label>
+        <p id="correct2" class="correct">Correct!</p>
+        <p id="incorrect2" class="incorrect">Incorrect!</p>
+        <br>
+
+        <h4>Who shot the black buck?</h4>
+        <input type="radio" name="question3" id="q3opt1"><label for="q3opt1">a) Salman Khan</label>
+        <input type="radio" name="question3" id="q3opt2"><label for="q3opt2">b) Amir Khan</label>
+        <input type="radio" name="question3" id="q3opt3"><label for="q3opt3">c) Shah Rukh Khan</label>
+        <input type="radio" name="question3" id="q3opt4"><label for="q3opt4">d) Akshay Kumar</label>
+        <p id="correct3" class="correct">Correct!</p>
+        <p id="incorrect3" class="incorrect">Incorrect!</p>
+        <br>
+    </section>
+   </main>
+   <footer id="footer">This is footer</footer>
+</body>
+</html>

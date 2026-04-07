@@ -1,0 +1,21 @@
+p{
+    background-color: aquamarine;
+}
+#para1{
+    background-color: bisque;
+}
+#para2{
+    background-color: aquamarine;
+}
+#para3{
+background-color: blueviolet;
+}
+
+.sameClass{
+    background-color: chocolate;
+}
+*{
+    padding: 20;
+    margin: 0;
+    color: rgba(8, 2, 2, 0.5);
+}
