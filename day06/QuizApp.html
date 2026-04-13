@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Application - Tailwind</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-gray-100 m-0 flex flex-col font-mono">
+    <!-- Header -->
+    <header class="h-[150px] flex justify-center items-center font-bold bg-green-100 text-2xl text-gray-800">
+        Quiz Application
+    </header>
+
+    <!-- Main Content -->
+    <main class="p-4 flex-grow">
+        <section class="max-w-3xl mx-auto bg-white p-6 rounded-lg shadow-md">
+            <h4 class="text-xl font-semibold mb-4">1. Why do you come late to class?</h4>
+            <div class="mb-2">
+                <input type="radio" name="one" id="op1" class="mr-2">
+                <label for="op1" class="text-lg">A. Traffic</label>
+            </div>
+            <div class="mb-2">
+                <input type="radio" name="one" id="w1" class="mr-2">
+                <label for="w1" class="text-lg">B. Breakfast</label>
+            </div>
+            <div class="mb-2">
+                <input type="radio" name="one" id="w11" class="mr-2">
+                <label for="w11" class="text-lg">C. Sleep</label>
+            </div>
+            <div class="mb-4">
+                <input type="radio" name="one" id="w111" class="mr-2">
+                <label for="w111" class="text-lg">D. Others</label>
+            </div>
+
+            <p id="op1an" class="text-green-600">Correct</p>
+            <p id="w1an" class="text-red-600">Incorrect</p>
+
+            <h4 class="text-xl font-semibold mt-6 mb-4">2. Why do you ask so many questions?</h4>
+            <div class="mb-2">
+                <input type="radio" name="two" id="op2" class="mr-2">
+                <label for="op2" class="text-lg">A. Improve your performance</label>
+            </div>
+            <div class="mb-2">
+                <input type="radio" name="two" id="w2" class="mr-2">
+                <label for="w2" class="text-lg">B. Make you bored</label>
+            </div>
+            <div class="mb-2">
+                <input type="radio" name="two" id="w22" class="mr-2">
+                <label for="w22" class="text-lg">C. Disturb</label>
+            </div>
+            <div class="mb-4">
+                <input type="radio" name="two" id="w222" class="mr-2">
+                <label for="w222" class="text-lg">D. Eliminate</label>
+            </div>
+
+            <p id="op2an" class="text-green-600">Correct</p>
+            <p id="w2an" class="text-red-600">Incorrect</p>
+
+            <h4 class="text-xl font-semibold mt-6 mb-4">3. Who is the Prime Minister of India?</h4>
+            <div class="mb-2">
+                <input type="radio" name="three" id="op3" class="mr-2">
+                <label for="op3" class="text-lg">A. Narendra Modi</label>
+            </div>
+            <div class="mb-2">
+                <input type="radio" name="three" id="w3" class="mr-2">
+                <label for="w3" class="text-lg">B. Ashok Mittal</label>
+            </div>
+            <div class="mb-2">
+                <input type="radio" name="three" id="w33" class="mr-2">
+                <label for="w33" class="text-lg">C. Arvind Kejriwal</label>
+            </div>
+            <div class="mb-4">
+                <input type="radio" name="three" id="w333" class="mr-2">
+                <label for="w333" class="text-lg">D. Me</label>
+            </div>
+
+            <p id="op3an" class="text-green-600">Correct</p>
+            <p id="w3an" class="text-red-600">Incorrect</p>
+        </section>
+    </main>
+
+    <footer class="bg-green-100 text-center py-4 mt-6">
+        This is the footer part
+    </footer>
+</body>
+</html>

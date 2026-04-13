@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var laptops=[
+            {id:101, brand:"hp",model:"pavillion 15",price:5500},
+            {id:102, brand:"dell",model:"idea pad",price:60000},
+            {id:103, brand:"asus",model:"ROG",price:90000},
+            {id:104, brand:"apple",model:"NEO",price:150000},        
+        ]
+
+     </script>
+     Populate table with Laptops <button onclick="populate()"> click </button>
+    <table border="2px" id="table1" style="padding: 1px"></table>
+    <br>
+    <div id="btnDiv"> </div>
+    <script>
+        let el = document.getElementById("table1");
+        let el2 = document.getElementById("btnDiv");
+       
+        function populate(){
+            let btn = document.createElement('button');
+            btn.innerHTML = "Click to see Magic !";
+            btn.id = "magicBtn";
+            el2.appendChild(btn)
+            for(let laptop of laptops){
+                let tr1 = document.createElement('tr');
+                for(let key in laptop){
+                    let th = document.createElement('th');
+                    th.innerHTML = key;
+                    tr1.appendChild(th);
+                }
+                let th2 = document.createElement('th');
+                th2.innerHTML = "like";
+                tr1.appendChild(th2);
+                
+                let th3 = document.createElement('th');
+                th3.innerHTML = "unlike";
+                tr1.appendChild(th3);
+
+                tr1.id="tableHeading";
+                el.appendChild(tr1);
+                break;
+            }
+            for(let laptop of laptops){
+                let tr = document.createElement('tr');
+                for(let key in laptop){
+                    console.log(key);
+                    let td = document.createElement('td');
+                    td.innerHTML = laptop[key];
+                    tr.appendChild(td);
+                }
+                let th2 = document.createElement('td');
+                th2.innerHTML = "like";
+                th2.onclick = ()=>{
+                    tr.style.backgroundColor ="green";
+                }
+                tr.appendChild(th2);
+                
+                let th3 = document.createElement('td');
+                th3.innerHTML = "unlike";
+                th3.onclick = ()=>{
+                    tr.style.backgroundColor ="red";
+                }
+                tr.appendChild(th3);
+                
+                el.appendChild(tr);
+            }
+
+            let btn2 = document.getElementById("magicBtn");
+            btn2.onclick=()=>{
+                let m = document.createElement("marquee");
+                m.innerHTML = document.getElementById("table1").outerHTML;
+                document.body.appendChild(m);
+            }
+        }
+        
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var laptop=[
+            {id:101, brand:"hp",model:"pavillion 15",price:95000},
+            {id:102, brand:"dell",model:"idea pad",price:95000},
+            {id:103, brand:"asus",model:"ROG",price:95000},
+            {id:104, brand:"apple",model:"NEO",price:95000},        
+        ]
+
+        var fruits = ["banana","apple","cherry"]
+    </script>
+    <h2 onclick="method1()">Populate fruit using method1</h2>
+    <h2  onclick="method2()">Populate fruit using method2</h2>
+
+    <br>
+    Populated list
+    <select name="fruits" id="fruits"></select>
+    <br>
+    
+    <script>
+        let el= document.getElementById('fruits');
+        function method1(){
+            var str = '';
+            for(let fruit of fruits){
+                str += "<option>"+fruit+" method1"+"</option>";
+            }
+            el.innerHTML = str;
+        }
+
+        function method2(){
+            for(let fruit of fruits){
+                let opt = document.createElement('option');
+                opt.innerHTML = fruit+" using method2";
+                el.appendChild(opt);
+            }
+            
+        }
+    </script>
+</body>
+</html>
