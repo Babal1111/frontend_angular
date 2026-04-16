@@ -1,0 +1,9 @@
+.user-details{
+    background-color: antiquewhite;
+    width: 400px;
+    margin: 20px;
+    padding: 3px;
+    border: 2px solid blue;
+    border-radius: 3px;
+    /* display: grid; */
+}

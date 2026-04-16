@@ -1,0 +1,30 @@
+
+<h1>my first angular app</h1>
+<h2>{{title}}</h2>
+<div class="user-details">
+  <p>Name: {{user.name}}</p>
+  <p>Age: {{user.age}}</p>
+  <p>address: {{user.address}}</p>
+  <p>phone numbers: {{user.phone}}</p>
+</div>
+@for(userr of users ; track user.name)
+{
+  <div class="user-details">
+    <p>S/No: {{userr.id}} </p>
+    <p>Name: {{userr.name}}</p>
+  <p>Age: {{userr.age}}</p>
+  <p>address: {{userr.address}}</p>
+  <!-- <img [src]="userr.pic" alt="" width="395px"> -->
+  <!-- <img src="{{userr.pic}}" alt=""> -->
+   <input type="text" [disabled]="userr.edit">
+   @if(userr.gender == 'male'){
+    <div> He is male fire him</div>
+   }
+   @else{
+    <div> She is female keep him</div>
+   }
+
+  </div>
+}
+
+<router-outlet />

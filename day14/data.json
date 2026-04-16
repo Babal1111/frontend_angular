@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "model": "Dell XPS 13",
+    "price": 999.99
+  },
+  {
+    "id": 2,
+    "model": "MacBook Air M2",
+    "price": 1199.00
+  },
+  {
+    "id": 3,
+    "model": "HP Spectre x360",
+    "price": 1499.99
+  },
+  {
+    "id": 4,
+    "model": "Lenovo ThinkPad X1 Carbon",
+    "price": 1399.50
+  },
+  {
+    "id": 5,
+    "model": "Asus ROG Zephyrus G14",
+    "price": 1699.00
+  }
+]

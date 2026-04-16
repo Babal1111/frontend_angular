@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cricket</title>
+    <style>
+        .feild{
+            align-items: center;
+            /* align-content: center; */
+            background-color: lightgrey;
+            margin: 100px;
+            padding: 100px;
+            display: flex;
+            justify-content: center;
+            /* flex-wrap: wrap; */
+            gap: 20px;
+            position: relative; 
+        }
+        #runup {
+            position: absolute;
+            top: 100px;
+            left: 38%;
+            
+           
+        }
+        form {
+        margin-top: 40px;
+        }
+        #overTable {
+            position: absolute;
+            top: 180px;
+            left: 38%;
+        }
+
+    </style>
+</head>
+<body> 
+    
+    <div class="feild" id="pitchDiv" >
+        <div id="runup"></div>
+        <form action="">
+        <label for="batsmen">Bat</label>
+        <input id="bat" type="number" name="batsmen" placeholder="Enter the number u want to play(0-9)">
+        <br>
+
+        <!-- <button type="button" onclick="bowl()">Play</button> -->
+        </form>          
+        <table border="4px" id="bowlerTable">
+            <tr><th>Bowl</th></tr>
+            <tr>
+                <td id="bowlerNumber">0</td>
+            </tr>
+        </table>
+        <div id="stats">
+            <p id="resultPara"></p>
+            <table border="2px" id="scoreTable">
+                <tr><th>score</th></tr>
+            <tr>
+                <td id="score">0</td>
+            </tr>
+        </table>
+        </div>
+        <div id="overTable"><table border="1px">
+
+            <tr id="overTableRow">
+            
+        </tr>
+        </table></div>
+    </div>
+
+
+    <script>
+
+        let ball =document.getElementById("bowlerNumber");
+        let res = document.getElementById("resultPara");
+        let sc = document.getElementById("score");
+        let score = 0;
+        let overArray = [0,0,0,0,0,0];
+        let currentIndex=5;
+        let isOut = false;
+
+        document.querySelector('form').addEventListener('submit',(e)=>{
+            e.preventDefault();
+            bowlTime();
+        })
+        function bowlTime(){
+            let bowling = document.getElementById("runup");
+            bowling.innerHTML="bowling";
+            let count =0;
+            console.log("bowler runnig");
+
+            let int1 = setInterval(()=>{
+                bowling.textContent+=".";
+                count++;
+                if(count==5){ 
+                    bowling.innerHTML="";
+                    clearInterval(int1);
+                    bowl();
+                }
+            },300)
+            // bowl();
+
+        }
+        function bowl(){
+            let bat = document.getElementById("bat");
+            let battedNumber = Number(bat.value);
+            let bowledNumber = Math.floor(((Math.random()*6)+1));
+            ball.innerText = bowledNumber;
+
+            score+=battedNumber;
+
+            console.log(battedNumber);
+            // if()
+            if(battedNumber == 6){
+                isOut=false;
+                res.innerText = "SIXER !!!";
+
+                setTimeout(()=>{
+                    res.innerHTML="  ";
+                },2000)
+            }
+            if(battedNumber == bowledNumber){
+                isOut= true;
+                res.innerText = "OUT!!!";
+                score =0;
+                setTimeout(()=>{
+                    res.innerHTML="  ";
+                },2000)
+            }
+            sc.innerText=score;
+
+            //over
+            if(isOut){
+                isOut=false;
+                overArray[currentIndex]='W';
+                
+            }
+            else{
+                overArray[currentIndex]=battedNumber;
+            }
+            
+            console.log(overArray);
+            updateOver();
+            rottateAreLeft();
+            console.log(overArray);
+
+            // currentIndex++;
+            // if(currentIndex>5){
+            //     rottateAreLeft();
+            //     // currentIndex=currentIndex%6;
+            // }
+            
+
+            function rottateAreLeft(){
+                let arr = overArray;
+                const firstElement = arr[0];
+
+            // Shift all elements to the left by one position
+                for (let i = 0; i < arr.length - 1; i++) {
+                arr[i] = arr[i + 1];
+            }
+
+            // Place the first element at the end
+            arr[arr.length - 1] = firstElement;
+            }
+        }
+        
+        function updateOver(){
+        let overTableRow= document.getElementById("overTableRow");
+        // 
+        overTableRow.innerHTML="";
+        for(let score of overArray){
+            let td = document.createElement('td');
+            td.innerText=score;
+            overTableRow.appendChild(td);
+        }
+        }
+        
+    </script>
+    
+</body>
+</html>
