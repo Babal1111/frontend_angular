@@ -1,0 +1,33 @@
+.user-list{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: small;
+    font-style: oblique;
+    font-family: cursive;
+}
+.user-table{
+    background-color: rgb(247, 231, 244);
+    border-collapse: collapse;
+    width: 100%;
+    table-layout: fixed;
+    margin: 5px;
+}
+.user-table tr{
+        border-bottom: 1px solid #000000; /* Adds border to bottom of each row */
+        border-top: 1px solid #000000; 
+        border-left: 1px solid #000000; 
+        border-right: 1px solid #000000; 
+        
+
+    
+}
+.user-table th,
+.user-table td {
+  /* border: 1px solid #000000; */
+  padding: 10px;
+  text-align: left;
+  width: 20%; /* Each column takes 20% (for 5 columns) */
+}
+
+

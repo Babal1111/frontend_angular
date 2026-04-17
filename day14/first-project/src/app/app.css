@@ -1,9 +1,12 @@
-.user-details{
-    background-color: antiquewhite;
-    width: 400px;
-    margin: 20px;
-    padding: 3px;
-    border: 2px solid blue;
-    border-radius: 3px;
+.cardView{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.app-container{
     /* display: grid; */
+    /* align-items: center;
+    justify-content: center; */
 }

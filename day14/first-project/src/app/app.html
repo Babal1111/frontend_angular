@@ -1,30 +1,39 @@
-
+<div class="app-container">
 <h1>my first angular app</h1>
 <h2>{{title}}</h2>
-<div class="user-details">
+
+<!-- <div class="user-details">
+
   <p>Name: {{user.name}}</p>
   <p>Age: {{user.age}}</p>
   <p>address: {{user.address}}</p>
   <p>phone numbers: {{user.phone}}</p>
-</div>
-@for(userr of users ; track user.name)
-{
-  <div class="user-details">
-    <p>S/No: {{userr.id}} </p>
-    <p>Name: {{userr.name}}</p>
-  <p>Age: {{userr.age}}</p>
-  <p>address: {{userr.address}}</p>
-  <!-- <img [src]="userr.pic" alt="" width="395px"> -->
-  <!-- <img src="{{userr.pic}}" alt=""> -->
-   <input type="text" [disabled]="userr.edit">
-   @if(userr.gender == 'male'){
-    <div> He is male fire him</div>
-   }
-   @else{
-    <div> She is female keep him</div>
-   }
+</div> -->
+<button (click)="changeTitle()">click here to change the title</button><br>
+<button (click)="cardView()">Do you want to see in form of cards</button>
+<button (click)="listView()">Do you want to see in form of List</button>
+  
+ <!-- <app-user-details name="Chandan" address="Udaipur"  age="30" gender="male"/> -->
 
+
+ @if(viewType=="cardView"){
+  <div class="cardView">
+    @for(user of users; track user.name; let i = $index){
+    <app-user-details (onupdate)="parentAction($event)" name="{{user.name}}" address="{{user.address}}"  [age]="user.age" gender="{{user.gender}}" [index] = "i+1"/>
+ }
   </div>
-}
+  
+ }
+ @else if(viewType=="listView"){
+  <div class="listView">
+    @for(user of users; track user.name; let i = $index){
+    <app-user-list name="{{user.name}}" address="{{user.address}}"  [age]="user.age"  gender="{{user.gender}}" [index] = "i+1"/>
+    }
+  </div>
+   
+ }
 
+</div>
+
+ <!-- <app-user-list></app-user-list> -->
 <router-outlet />

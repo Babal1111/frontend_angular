@@ -1,0 +1,42 @@
+
+
+<div class="user-details">
+    S/no:{{index}}
+  <p>Name: {{name}}</p>
+  <p>Age: {{age}}</p>
+  <p>address: {{address}}</p>
+  <p>gender: {{gender}}</p>
+  <button (click) = "informParent()"> click to send data to parent</button>
+  
+  <button (click) = "editDetails()">Edit details</button>
+  @if(edit){
+    <form action="">
+        <input type="text" placeholder="enter updated name">
+        <input type="number" placeholder="enter updated age">
+    </form>
+  }
+</div>
+
+<!-- 
+@for(userr of users ; track user.name)
+{
+  <div class="user-details">
+   S/No: {{userr.id}} --- Name: {{userr.name}} --- Age: {{userr.age}} --- address: {{userr.address}} -->
+  <!-- <img [src]="userr.pic" alt="" width="395px"> -->
+  <!-- <img src="{{userr.pic}}" alt=""> -->
+   <!-- <input type="text" [disabled]="userr.edit">
+   @if(userr.gender == 'male'){
+    <div> He is male fire him</div>
+   }
+   @else{
+    <div> She is female keep her</div>
+   } -->
+
+   <!-- @switch(userr.gender)
+   {
+    @case('male'){<div> He is male dont give him bonous</div>}
+    @case('female'){<div> She is female  give her bonous</div>}
+   }
+  </div>
+ 
+} -->
