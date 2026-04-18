@@ -1,0 +1,19 @@
+
+<h1>Title :{{title}}</h1>
+<input type="text" [(ngModel)] = "title" >
+<!-- <h2>[(ngModel)]</h2> -->
+<!-- @for(laptop of laptops; track laptop.model){
+<app-laptop-card [laptopObject]="laptop"></app-laptop-card>
+
+} -->
+<div class="boxes">
+  @for(laptop of laptops.slice(startIndex,endIndex); track laptop.model){
+
+<app-laptop-card [laptopObject]="laptop"></app-laptop-card>
+
+}
+</div>
+
+<button (click)="previous()" [disabled]="startIndex==0">Previous</button>
+<button (click)="next()" [disabled]="endIndex==laptops.length">Next</button>
+<router-outlet />

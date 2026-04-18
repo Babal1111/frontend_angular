@@ -1,0 +1,25 @@
+
+
+.laptop-details {
+  background-color: rgb(110, 222, 225);
+  width: 400px;
+  margin: 20px;  /* Remove margin, let container handle spacing */
+  padding: 3px;
+  border: 6px solid rgb(0, 191, 255);
+  border-radius: 3px;
+  box-shadow: 50px 50px 10px rgba(0,0,0,0.1);
+  /* Remove display: flex if not needed */
+
+}
+
+.laptop-details div{
+  /* padding:20; */
+  margin: 20px;
+}
+/* .laptop-details div.hover{
+  background-color: yellowgreen;
+} */
+
+.highlight{
+  background-color: yellowgreen;
+}
