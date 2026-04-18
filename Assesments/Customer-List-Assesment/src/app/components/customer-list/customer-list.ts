@@ -1,8 +1,10 @@
 import { Component, } from '@angular/core';
 import { CustomerInterface } from './CustomerInterface';
+import { DatePipe, DecimalPipe } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-customer-list',
-  imports: [],
+  imports: [DatePipe,DecimalPipe,FormsModule],
   templateUrl: './customer-list.html',
   styleUrl: './customer-list.css',
 })
@@ -57,6 +59,7 @@ export class CustomerList {
       // }
       this.result=[];
       for(let customer of this.customers){
+        if(! this.searchedName) break;
         if(customer.name.toLowerCase().includes(this.searchedName.toLowerCase())){
           this.result.push(customer);
         }

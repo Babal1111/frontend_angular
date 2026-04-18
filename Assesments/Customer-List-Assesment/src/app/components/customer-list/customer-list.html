@@ -2,7 +2,7 @@
 
     
 <h2>Customer List</h2><br>
-<table border="1" cellpadding="5" >
+<table id="customer-table" border="1" cellpadding="5" >
   <thead>
     <tr>
       <th>ID</th>
@@ -31,14 +31,15 @@
   
 </table>
 
-<button (click)="next()"  [disabled]="startIndex+pageSize>=len">Next</button>
 <button (click)="prev()"  [disabled]="startIndex==0">Previous</button>
+<button (click)="next()"  [disabled]="startIndex+pageSize>=len">Next</button>
 <br><br>
-<input type="text" [(ngModel)]="searchedName" placeholder="search for Name" (input)="search()">
+<label for="searchBar">Search </label>
+<input type="text" name="searchBar" [(ngModel)]="searchedName" placeholder="Enter Name" (input)="search()">
 
 <div class="search-results">
+    <table id="search-result-table" border="1px" cellpadding="5">
     @for(customer of result; track customer.id){
-    <table border="1px" cellpadding="5">
     <tr>
       <td>{{ customer.id | number:'2.0'}}</td>
       <td>{{ customer.name }}</td>
@@ -48,9 +49,9 @@
       <td>{{ customer.dateOfBirth | date:'mediumDate'}}</td>
       <td>{{ customer.gender }}</td>
         </tr>
-    </table>
-    }
     
+    }
+    </table>
 
 </div>
 </div>
