@@ -1,0 +1,56 @@
+<div class="customer-list-div">
+
+    
+<h2>Customer List</h2><br>
+<table border="1" cellpadding="5" >
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Address</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Date of Birth</th>
+      <th>Gender</th>
+    </tr>
+  </thead>
+  <!-- @for(let i = startIndex;i<=endIndex;i++ ; track customer.id){ -->
+  @for(customer of customers.slice(startIndex,startIndex+pageSize); track  customer.id){
+    <tbody>
+    <tr>
+      <td>{{ customer.id | number:'2.0'}}</td>
+      <td>{{ customer.name }}</td>
+      <td>{{ customer.address }}</td>
+      <td>{{ customer.email }}</td>
+      <td>{{ customer.phone }}</td>
+      <td>{{ customer.dateOfBirth | date:'mediumDate'}}</td>
+      <td>{{ customer.gender }}</td>
+    </tr>
+  </tbody>
+  }
+  
+</table>
+
+<button (click)="next()"  [disabled]="startIndex+pageSize>=len">Next</button>
+<button (click)="prev()"  [disabled]="startIndex==0">Previous</button>
+<br><br>
+<input type="text" [(ngModel)]="searchedName" placeholder="search for Name" (input)="search()">
+
+<div class="search-results">
+    @for(customer of result; track customer.id){
+    <table border="1px" cellpadding="5">
+    <tr>
+      <td>{{ customer.id | number:'2.0'}}</td>
+      <td>{{ customer.name }}</td>
+      <td>{{ customer.address }}</td>
+      <td>{{ customer.email }}</td>
+      <td>{{ customer.phone }}</td>
+      <td>{{ customer.dateOfBirth | date:'mediumDate'}}</td>
+      <td>{{ customer.gender }}</td>
+        </tr>
+    </table>
+    }
+    
+
+</div>
+</div>
