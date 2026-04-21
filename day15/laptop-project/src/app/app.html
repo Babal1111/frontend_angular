@@ -1,7 +1,7 @@
 
 <h1>Title :{{title}}</h1>
-<input type="text" [(ngModel)] = "title" >
-<!-- <h2>[(ngModel)]</h2> -->
+<input type="text" [(ngModel)] = "title" > 
+<h2>[(ngModel)]</h2>
 <!-- @for(laptop of laptops; track laptop.model){
 <app-laptop-card [laptopObject]="laptop"></app-laptop-card>
 
@@ -16,4 +16,6 @@
 
 <button (click)="previous()" [disabled]="startIndex==0">Previous</button>
 <button (click)="next()" [disabled]="endIndex==laptops.length">Next</button>
+
+<!-- <app-customer-list></app-customer-list> -->
 <router-outlet />

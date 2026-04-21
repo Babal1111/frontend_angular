@@ -26,10 +26,17 @@ button{
 }
 
 tr{
-    border: 0;
+    border: 0px ;
+    /* border-bottom: 1px;
+    border-top: 10px; */
+
+    /* margin: 0px; */
 }
 td{
+    /* border: 10px solid black; */
     width: 300px;
+    border-left:0px;
+    border-right:0px;
 }
 .search-result{
     margin-top: 100px;
@@ -47,3 +54,13 @@ input{
     margin-bottom: 20px;
 
 }
+
+button:hover{
+    background-color: rgb(145, 88, 198);
+    
+}
+/* #magicButton:hover {
+    transform: translate(10px, 0);
+    transition: transform 0.3s ease; 
+} */
+    

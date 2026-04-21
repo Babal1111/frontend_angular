@@ -2,7 +2,7 @@
 
     
 <h2>Customer List</h2><br>
-<table id="customer-table" border="1" cellpadding="5" >
+<table border="1" cellpadding="5" >
   <thead>
     <tr>
       <th>ID</th>
@@ -15,9 +15,8 @@
     </tr>
   </thead>
   <!-- @for(let i = startIndex;i<=endIndex;i++ ; track customer.id){ -->
-<tbody>
   @for(customer of customers.slice(startIndex,startIndex+pageSize); track  customer.id){
-    
+    <tbody>
     <tr>
       <td>{{ customer.id | number:'2.0'}}</td>
       <td>{{ customer.name }}</td>
@@ -27,22 +26,19 @@
       <td>{{ customer.dateOfBirth | date:'mediumDate'}}</td>
       <td>{{ customer.gender }}</td>
     </tr>
-  
-  }
   </tbody>
+  }
   
 </table>
-<button (click)="prev()"  [disabled]="startIndex==0">Previous</button>
 
 <button (click)="next()"  [disabled]="startIndex+pageSize>=len">Next</button>
-<button id="magicButton">click me</button>
+<button (click)="prev()"  [disabled]="startIndex==0">Previous</button>
 <br><br>
-<label for="searchBar">Search </label>
-<input type="text" name="searchBar" [(ngModel)]="searchedName" placeholder="Enter Name" (input)="search()">
+<input type="text" [(ngModel)]="searchedName" placeholder="search for Name" (input)="search()">
 
 <div class="search-results">
-    <table id="search-result-table" border="1px" cellpadding="5">
     @for(customer of result; track customer.id){
+    <table border="1px" cellpadding="5">
     <tr>
       <td>{{ customer.id | number:'2.0'}}</td>
       <td>{{ customer.name }}</td>
@@ -51,10 +47,13 @@
       <td>{{ customer.phone }}</td>
       <td>{{ customer.dateOfBirth | date:'mediumDate'}}</td>
       <td>{{ customer.gender }}</td>
-        </tr>
     
-    }
+      <td>{{ customer.address | truncate }}</td>
+
+        </tr>
     </table>
+    }
+    
 
 </div>
 </div>

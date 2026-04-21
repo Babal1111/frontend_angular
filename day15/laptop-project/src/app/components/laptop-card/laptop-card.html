@@ -6,11 +6,15 @@
   <div>model: {{model}}</div>
   <div>price: {{price | currency:'INR'}}</div>
   <div>brand: {{brand}}</div>
+  <div (click)="fullDiscription()">Discription : {{discription | truncate:trucLength}}</div>
   <div (mouseover)="highlight()" [class.highlight]="highlighted" >brand: {{brand}}</div>
     <!-- <div (mouseover)="highlight()"  [style.background-color]="clr">brand: {{brand}}</div> -->
 
   <!-- <input type="text" [value]="like" (input)="changedValue($event)"> -->
 
   <input type="text" [(ngModel)]= "like" placeholder="ng model">
+
+
+  
   value is : {{like}}
 </div>
