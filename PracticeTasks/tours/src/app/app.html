@@ -1,0 +1,29 @@
+<h1>Tours and Travels</h1>
+<div class="whole">
+  <button (click)="showAll2()">All Trips</button>
+  @if(show){
+    @for(i of iterinary; track i.id){
+    <app-iterinary [eachtour]="i"/>
+  }
+  }
+  
+</div>
+<div class="form">
+  <form action="#" (ngSubmit) = "onSubmit(tripForm)" #tripForm="ngForm" novalidate>
+    <input type="text" [(ngModel)]="trip.id" name="id" placeholder="id" required #tripidmodel="ngModel"><br> 
+    @if(tripidmodel.invalid && tripidmodel.touched){
+      <div>error in input: {{tripidmodel.errors| json}}</div>
+    }
+    
+    <input type="text" [(ngModel)]="trip.place" name="place" placeholder="place" required minlength="5" #tripplacemodel = "ngModel">
+    @if(tripplacemodel.invalid && tripplacemodel.touched){
+      <div>error in input: {{tripplacemodel.errors| json}}</div> 
+    }
+    <input type="text" [(ngModel)]="trip.days" name="tripid" placeholder="days">
+    <input type="number" [(ngModel)]="trip.cost" name="tripid" placeholder="cost">
+    <input type="text" [(ngModel)]="trip.description" name="tripid" placeholder="discription">
+  </form>
+  
+</div>
+
+<router-outlet />

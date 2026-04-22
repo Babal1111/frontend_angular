@@ -1,0 +1,11 @@
+
+<div class="eachtour">
+    <h2>{{eachtour.place}}</h2>
+    <button (click)="showDetails()">Show details</button>
+    @if(show){
+         <p>days: {{eachtour.days}}</p>
+    <p>cost: {{eachtour.cost}}</p>
+    <p #desc (click)="changeLenght()">description: {{eachtour.description | truncate: truncLength}}</p>
+    }
+   
+</div>
