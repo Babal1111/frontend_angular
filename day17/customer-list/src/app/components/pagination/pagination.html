@@ -1,0 +1,8 @@
+<!-- <p>pagination works!</p> -->
+<div>
+    <button (click)="emitPageEvent(currentPage-1)" [disabled]="currentPage==1">Previous</button>
+    @for(num of numbers; track num){
+        <button (click) = "emitPageEvent(num)" [style.background-color] ="currentPage === num? 'lightblue': 'lightgrey'" >{{num}}</button>
+    }
+    <button (click)="emitPageEvent(currentPage+1)" [disabled]="currentPage==max">Next</button>
+</div>
