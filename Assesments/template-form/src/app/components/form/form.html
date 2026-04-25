@@ -1,0 +1,19 @@
+<p>form works!</p>
+
+<div class="form-div">
+    <form (ngSubmit)="onSubmit()" #myForm="ngForm">
+        <input type="text" placeholder="title" name="title" [(ngModel)]="data.title" #title="ngModel" required>
+        <input type="text" placeholder="topic" name="topic" [(ngModel)]="data.topic" #topic="ngModel" required>
+        <input type="number" placeholder="max tranies" name="maxTraniees" [(ngModel)]="data.maxTrainees" #maxTrainees="ngModel" required>
+        <input type="date" placeholder="start date" name="startDate" [(ngModel)]="data.startDate" #startDate="ngModel" required>
+        <input type="date" placeholder="end date" name="endDate" [(ngModel)]="data.endDate" #endDate="ngModel" required>
+        <input type="text" placeholder="trainer name" name="trainerName" [(ngModel)]="data.trainerName" #trainerName="ngModel" required>
+
+        <input type="text" placeholder="venue" name="venue" [(ngModel)]="data.venue" #venue="ngModel" required>
+        <button type="submit" [disabled]="myForm.invalid">submit</button>
+    </form>
+    <button>See Training list</button>
+</div>
+        <!-- <app-training-list [trainingList]="trainingList"></app-training-list> -->
+
+

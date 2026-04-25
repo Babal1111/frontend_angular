@@ -1,0 +1,36 @@
+@if (trainingList.length > 0) {
+    <div class="training-list">
+        <h3>Training Programs ({{trainingList.length}})</h3>
+        <table class="training-table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Title</th>
+                    <th>Topic</th>
+                    <th>Max Trainees</th>
+                    <th>Start Date</th>
+                    <th>End Date</th>
+                    <th>Trainer</th>
+                    <th>Venue</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (training of trainingList; track $index; let i = $index) {
+                    <tr>
+                        <td>{{i + 1}}</td>
+                        <td>{{training.title}}</td>
+                        <td>{{training.topic}}</td>
+                        <td class="center">{{training.maxTrainees}}</td>
+                        <td>{{training.startDate | date:'dd/MM/yyyy'}}</td>
+                        <td>{{training.endDate | date:'dd/MM/yyyy'}}</td>
+                        <td>{{training.trainerName}}</td>
+                        <td>{{training.venue}}</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+} @else {
+    <p>No training programs added yet. Please add your first training!</p>
+}

@@ -1,0 +1,20 @@
+.form-div{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid blue;
+    margin: 50px ;
+}
+.form-div form{
+    display: flex;
+    flex-direction: column;
+    gap:15px;
+    width: 500px;
+    padding: 20px;
+}
+.form-div form input,
+.form-div form button {
+    padding: 10px;
+    font-size: 16px;
+}
